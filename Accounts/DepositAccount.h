@@ -10,6 +10,10 @@
 #include <time.h>
 class DepositAccount : Account{
     tm* EndDepositTime;
+    int InitialSum;
+    void GetPercent();
+    Transaction Withdraw(int Sum);
+    Transaction Transfer(int Sum, int ToAccount, string Comment);
 
     /*
      * time_t  now1 = time(0);

@@ -12,7 +12,8 @@ enum StatusCodes{
     Denied,
     UnsuccessfulDenied,
     NotEnoughMoney,
-    Interest
+    Interest,
+    NotDepositDateEnded
 
 };
 class Transaction {
