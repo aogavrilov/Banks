@@ -3,3 +3,8 @@
 //
 
 #include "ClientsSystem.h"
+void Client::AddPassportInfo(string PassportInfo, int PassportSeries, int PassportNumber){
+    this->PassportInfo = PassportInfo;
+    this->PassportSeries = PassportSeries;
+    this->PassportNumber = PassportNumber;
+};
