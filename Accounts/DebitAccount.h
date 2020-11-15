@@ -9,7 +9,15 @@
 #include "Account.h"
 
 class DebitAccount : Account{
-
+/*
+ *
+ *     virtual Transaction Withdraw(int Sum);
+    virtual Transaction Deposite(int Sum);
+    virtual Transaction Transfer(int Sum, int ToAccount);
+ */
+    Transaction Withdraw(int Sum);
+    Transaction Transfer(int Sum, int ToAccount, string Comment);
+    Transaction GetPercent();
 };
 
 

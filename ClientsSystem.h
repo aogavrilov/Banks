@@ -12,12 +12,12 @@ using namespace std;
 class Client {
     string FirstName, SurName, MiddleName, Address;
     string PassportInfo;
-    int PassportSeries, PassportNumber;
+    int PassportSeries, PassportNumber, Status;
 public:
     Client(string FirstName, string SurName, string MiddleName) : FirstName(FirstName), SurName(SurName), MiddleName(MiddleName){};
-    void AddAdress(string Address){ this->Address = Address; };
+    void AddAddress(string Address){ this->Address = Address; };
     void AddPassportInfo(string PassportInfo, int PassportSeries, int PassportNumber);
-
+    void Verification();
 };
 
 

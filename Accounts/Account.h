@@ -4,13 +4,22 @@
 
 #ifndef BANKS_ACCOUNT_H
 #define BANKS_ACCOUNT_H
+
+#include "../Transaction.h"
+
 using namespace std;
 
 class Account {
+protected:
+    int AccountId;
     int ClientId;
-    int Withdraw(int Sum);
-    int Deposite(int Sum);
-    int Transfer(int Sum, int ToAccount);
+    int Percent;
+    int Sum;
+public:
+    virtual Transaction Withdraw(int Sum);
+    virtual Transaction Deposit(int Sum);
+    virtual Transaction Transfer(int Sum, int ToAccount);
+
 };
 
 

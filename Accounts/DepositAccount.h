@@ -7,9 +7,16 @@
 
 
 #include "Account.h"
-
+#include <time.h>
 class DepositAccount : Account{
+    tm* EndDepositTime;
 
+    /*
+     * time_t  now1 = time(0);
+    tm* lt1 = localtime(&now1);
+    lt1->tm_mday -=1;
+
+     */
 };
 
 

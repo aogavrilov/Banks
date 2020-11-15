@@ -3,3 +3,8 @@
 //
 
 #include "Transaction.h"
+void Transaction::Do(){
+    if(From != -1){
+
+    }
+}

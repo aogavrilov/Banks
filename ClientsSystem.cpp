@@ -8,3 +8,11 @@ void Client::AddPassportInfo(string PassportInfo, int PassportSeries, int Passpo
     this->PassportSeries = PassportSeries;
     this->PassportNumber = PassportNumber;
 };
+
+void Client::Verification() {
+    if((PassportInfo == "-") || (Address == "-") || (PassportSeries == -1)
+    || (PassportNumber == -1))
+        Status = 2;
+    else
+        Status = 1;
+}
