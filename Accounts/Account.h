@@ -17,7 +17,7 @@ protected:
     int Sum;
 public:
     virtual Transaction Withdraw(int Sum);
-    virtual Transaction Deposit(int Sum);
+    Transaction Deposit(int Sum);
     virtual Transaction Transfer(int Sum, int ToAccount);
 
 };

@@ -10,6 +10,9 @@
 
 class CreditAccount : Account{
 
+    Transaction Withdraw(int Sum);
+    Transaction Transfer(int Sum, int ToAccount, string Comment);
+
 };
 
 
