@@ -8,11 +8,16 @@
 #include <string>
 
 using namespace std;
+enum ClientStatus{
+    Unverified,
+    Verified
+};
 
 class Client {
     string FirstName, SurName, MiddleName, Address;
     string PassportInfo;
-    int PassportSeries, PassportNumber, Status;
+    int PassportSeries, PassportNumber;
+    ClientStatus Status;
 public:
     Client(string FirstName, string SurName, string MiddleName) : FirstName(FirstName), SurName(SurName), MiddleName(MiddleName){};
     void AddAddress(string Address){ this->Address = Address; };

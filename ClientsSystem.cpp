@@ -12,7 +12,7 @@ void Client::AddPassportInfo(string PassportInfo, int PassportSeries, int Passpo
 void Client::Verification() {
     if((PassportInfo == "-") || (Address == "-") || (PassportSeries == -1)
     || (PassportNumber == -1))
-        Status = 2;
+        Status = Unverified;
     else
-        Status = 1;
+        Status = Verified;
 }
