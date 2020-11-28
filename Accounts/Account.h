@@ -5,7 +5,7 @@
 #ifndef BANKS_ACCOUNT_H
 #define BANKS_ACCOUNT_H
 
-#include "../Transaction.h"
+#include "../Transactions/Transaction.h"
 
 using namespace std;
 

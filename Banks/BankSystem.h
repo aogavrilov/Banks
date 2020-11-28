@@ -6,11 +6,10 @@
 #define BANKS_BANKSYSTEM_H
 
 #include <vector>
-#include "Accounts/Account.h"
-#include "ClientsSystem.h"
+#include "../Accounts/Account.h"
+#include "../Clients/ClientsSystem.h"
 
 using namespace std;
-
 class BankSystem {
     vector<Account> accounts;
     vector<Client> clients;

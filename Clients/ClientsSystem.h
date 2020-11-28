@@ -14,14 +14,13 @@ enum ClientStatus{
 };
 
 class Client {
-    string FirstName, SurName, MiddleName, Address;
+    string FirstName, SurName, Address;
     string PassportInfo;
-    int PassportSeries, PassportNumber;
     ClientStatus Status;
 public:
-    Client(string FirstName, string SurName, string MiddleName) : FirstName(FirstName), SurName(SurName), MiddleName(MiddleName){};
+    Client(string FirstName, string SurName) : FirstName(FirstName), SurName(SurName){};
     void AddAddress(string Address){ this->Address = Address; };
-    void AddPassportInfo(string PassportInfo, int PassportSeries, int PassportNumber);
+    void AddPassportInfo(string PassportInfo);
     void Verification();
 };
 

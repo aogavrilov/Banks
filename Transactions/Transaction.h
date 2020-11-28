@@ -14,7 +14,6 @@ enum StatusCodes{
     NotEnoughMoney,
     Interest,
     NotDepositDateEnded
-
 };
 class Transaction {
     int Sum, From, To;
@@ -23,7 +22,7 @@ class Transaction {
 public:
     Transaction(int Sum, int From, int To, string Comment, StatusCodes Status) : Sum(Sum), From(From), To(To),
     Status(Status){};
-    int Denied();
+    int Deny();
     void Do();
     // -1 - Withdraw, -2 - Deposit, other - Transfer
 };
