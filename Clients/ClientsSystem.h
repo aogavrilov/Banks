@@ -6,7 +6,8 @@
 #define BANKS_CLIENTSSYSTEM_H
 
 #include <string>
-
+#include "../Accounts/Account.h"
+#include <vector>
 using namespace std;
 enum ClientStatus{
     Unverified,
@@ -18,6 +19,8 @@ class Client {
     string PassportInfo;
     ClientStatus Status;
 public:
+    vector<Account*> accounts;
+    int ClientID;
     Client(string FirstName, string SurName) : FirstName(FirstName), SurName(SurName){};
     void AddAddress(string Address){ this->Address = Address; };
     void AddPassportInfo(string PassportInfo);

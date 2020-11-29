@@ -8,10 +8,14 @@
 
 #include "Account.h"
 #include <time.h>
-class DepositAccount : Account{
+class DepositAccount : public Account{
     tm* EndDepositTime;
     int InitialSum;
     void GetPercent();
+
+public:
+    DepositAccount(int AccountId, int ClientId, int Percent, int Sum) : Account(AccountId, ClientId, Percent, Sum){};
+
     Transaction Withdraw(int Sum);
     Transaction Transfer(int Sum, int ToAccount, string Comment);
 

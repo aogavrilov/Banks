@@ -8,13 +8,16 @@
 
 #include "Account.h"
 
-class DebitAccount : Account{
+class DebitAccount : public Account{
 /*
  *
  *     virtual Transaction Withdraw(int Sum);
     virtual Transaction Deposite(int Sum);
     virtual Transaction Transfer(int Sum, int ToAccount);
  */
+public:
+    DebitAccount(int AccountId, int ClientId, int Percent, int Sum) : Account(AccountId, ClientId,
+                                                                               Percent, Sum){};
     Transaction Withdraw(int Sum);
     Transaction Transfer(int Sum, int ToAccount, string Comment);
     Transaction GetPercent();

@@ -14,10 +14,13 @@ using namespace std;
 class BankSystem {
     vector<Client*> clients;
     string Name;
-    int BankId;
-public:
-    BankSystem(int BankId, string Name) : BankId(BankId), Name(Name){};
 
+public:
+    int BankId;
+    int Percent;
+    BankSystem(int BankId, string Name, int Percent) : BankId(BankId), Name(Name), Percent(Percent){};
+    void PayDay();
+    void PayMonth();
 
     vector<Account*> accounts;
 };

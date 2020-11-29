@@ -8,7 +8,10 @@
 
 #include "Account.h"
 
-class CreditAccount : Account{
+class CreditAccount : public Account{
+public:
+    CreditAccount(int AccountId, int ClientId, int Percent, int Sum) :  Account(AccountId, ClientId,
+            Percent, Sum){};
 
     Transaction Withdraw(int Sum);
     Transaction Transfer(int Sum, int ToAccount, string Comment);
