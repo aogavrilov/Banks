@@ -17,11 +17,12 @@ class Account {
 protected:
     int AccountId;
     int ClientId;
-    int Percent;
     int Sum;
-    int InterestOnTheBalance = 0;
+
 
 public:
+    int Percent;
+    int InterestOnTheBalance = 0;
     AccountType accountType;
     Account(int AccountId, int ClientId, int Percent, int Sum) : AccountId(AccountId), ClientId(ClientId),
         Percent(Percent), Sum(Sum){};
