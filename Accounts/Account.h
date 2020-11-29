@@ -16,6 +16,7 @@ protected:
     int Percent;
     int Sum;
 public:
+    int CountOfMoney;
     virtual Transaction Withdraw(int Sum);
     Transaction Deposit(int Sum);
     virtual Transaction Transfer(int Sum, int ToAccount);

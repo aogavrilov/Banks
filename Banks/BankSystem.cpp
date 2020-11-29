@@ -3,6 +3,3 @@
 //
 
 #include "BankSystem.h"
-int GetBankIDFromNumber(int number){
-    return ((number % 1000000000000000) / 10000000000);
-}
