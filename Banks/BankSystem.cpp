@@ -25,6 +25,8 @@ void BankSystem::PayMonth() {//InterestOnTheBalance
     }
 }
 Client* BankSystem::AddClient(Client* client) {
+    client->ClientID = clients.size()+1;
     clients.push_back(client);
     return client;
 }
+vector<BankSystem*> Banks;

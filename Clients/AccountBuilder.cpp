@@ -11,19 +11,19 @@ Account* AccountBuilder::AccountBuild() {//Client* client, AccountType accountTy
     Account* account;
     switch (accountType){
         case CREDITACCOUNT:{
-            account = new CreditAccount(bank->BankId * 10000000000 + accountType * 1000000000 + client->ClientID,
+            account = new CreditAccount(bank->BankId * 10000 + int(accountType) * 1000 + client->ClientID,
                                   client->ClientID, bank->Percent, Sum);
             account->accountType = CREDITACCOUNT;
             break;
         }
         case DEPOSITACCOUNT:{
-            account = new DepositAccount(bank->BankId * 10000000000 + accountType * 1000000000 + client->ClientID,
+            account = new DepositAccount(bank->BankId * 10000 + int(accountType) * 1000 + client->ClientID,
                                   client->ClientID, bank->Percent, Sum);
             account->accountType = DEPOSITACCOUNT;
             break;
         }
         case DEBITACCOUNT:{
-            account = new DebitAccount(bank->BankId * 10000000000 + accountType * 1000000000 + client->ClientID,
+            account = new DebitAccount(bank->BankId * 10000 + int(accountType) * 1000 + client->ClientID,
                                   client->ClientID, bank->Percent, Sum);
             account->accountType = DEBITACCOUNT;
             break;

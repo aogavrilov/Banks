@@ -12,34 +12,34 @@ void DepositAccount::GetPercent() {
             "Percent by using card", Interest);
     transaction.Do();
 }
-Transaction DepositAccount::Withdraw(int Sum) {
+Transaction* DepositAccount::Withdraw(int Sum) {
     if(this->Sum < Sum){
-        Transaction transaction = Transaction(Sum, this->AccountId, -1, "Withdraw", NotEnoughMoney);
+        Transaction* transaction = new Transaction(Sum, this->AccountId, -1, "Withdraw", NotEnoughMoney);
         return transaction;
     }
     time_t  now1 = time(0);
     tm* lt1 = localtime(&now1);
     if(IsFirstDateNewest(*lt1, *EndDepositTime)){
-        Transaction transaction = Transaction(Sum, this->AccountId, -1, "Withdraw", NotDepositDateEnded);
+        Transaction* transaction = new Transaction(Sum, this->AccountId, -1, "Withdraw", NotDepositDateEnded);
         return transaction;
     }
 
-    Transaction transaction1 = Transaction(Sum, this->AccountId, -1, "Withdraw", Successful);
-    transaction1.Do();
+    Transaction* transaction1 = new Transaction(Sum, this->AccountId, -1, "Withdraw", Successful);
+    transaction1->Do();
     return transaction1;
 }
-Transaction DepositAccount::Transfer(int Sum, int ToAccount, string Comment) {
+Transaction* DepositAccount::Transfer(int Sum, long long ToAccount, string Comment) {
     if(this->Sum < Sum){
-        Transaction transaction = Transaction(Sum, this->AccountId, ToAccount, "Withdraw", NotEnoughMoney);
+        Transaction* transaction = new Transaction(Sum, this->AccountId, ToAccount, "Withdraw", NotEnoughMoney);
         return transaction;
     }
     time_t  now1 = time(0);
     tm* lt1 = localtime(&now1);
     if(IsFirstDateNewest(*lt1, *EndDepositTime)){
-        Transaction transaction = Transaction(Sum, this->AccountId, -1, "Withdraw", NotDepositDateEnded);
+        Transaction* transaction = new Transaction(Sum, this->AccountId, -1, "Withdraw", NotDepositDateEnded);
         return transaction;
     }
-    Transaction transaction1 = Transaction(Sum, this->AccountId, ToAccount, Comment, Successful);
-    transaction1.Do();
+    Transaction* transaction1 = new Transaction(Sum, this->AccountId, ToAccount, Comment, Successful);
+    transaction1->Do();
     return transaction1;
 }

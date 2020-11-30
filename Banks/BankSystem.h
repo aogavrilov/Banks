@@ -9,11 +9,10 @@
 #include "../Clients/ClientsSystem.h"
 #include "PercentPolitics.h"
 
-int static GetBankIDFromNumber(int number){return ((number % 1000000000000000) / 10000000000);}
-int static GetClientIDFromNumber(int number){return (number % 10000000000);}
+int static GetBankIDFromNumber(int number){return ((number % 10000) / 1000);}
+int static GetClientIDFromNumber(int number){return (number % 10000);}
 using namespace std;
 class BankSystem {
-    vector<Client*> clients;
     string Name;
 
 public:
@@ -27,7 +26,9 @@ public:
     void PayMonth();
     Client* AddClient(Client*);
 
+
     vector<Account*> accounts;
+    vector<Client*> clients;
 };
-static vector<BankSystem*> Banks;
+extern vector<BankSystem*> Banks;
 #endif //BANKS_BANKSYSTEM_H

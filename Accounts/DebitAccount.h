@@ -16,10 +16,10 @@ class DebitAccount : public Account{
     virtual Transaction Transfer(int Sum, int ToAccount);
  */
 public:
-    DebitAccount(int AccountId, int ClientId, int Percent, int Sum) : Account(AccountId, ClientId,
+    DebitAccount(long long AccountId, int ClientId, int Percent, int Sum) : Account(AccountId, ClientId,
                                                                                Percent, Sum){};
-    Transaction Withdraw(int Sum);
-    Transaction Transfer(int Sum, int ToAccount, string Comment);
+    Transaction* Withdraw(int Sum) override;
+    Transaction* Transfer(int Sum, long long ToAccount, string Comment) override;
     Transaction GetPercent();
 };
 

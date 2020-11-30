@@ -28,22 +28,22 @@ class Account {
 protected:
 
     int ClientId;
-    int Sum;
 
 
 public:
-    int AccountId;
+    long long AccountId = 0;
     int Percent;
     int InterestOnTheBalance = 0;
     AccountType accountType;
-    Account(int AccountId, int ClientId, int Percent, int Sum) : AccountId(AccountId), ClientId(ClientId),
+    Account(long long AccountId, int ClientId, int Percent, int Sum) : AccountId(AccountId), ClientId(ClientId),
         Percent(Percent), Sum(Sum){};
-    int CountOfMoney;
-    Transaction Withdraw(int Sum){};
+    int CountOfMoney = 0;
+    virtual Transaction* Withdraw(int Sum);
     Transaction Deposit(int Sum);
-    Transaction Transfer(int Sum, int ToAccount, string Comment){};
+    virtual Transaction* Transfer(int Sum, long long ToAccount, string Comment);
 
 
+    int Sum;
 };
 
 

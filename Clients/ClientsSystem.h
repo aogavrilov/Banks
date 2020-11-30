@@ -20,7 +20,7 @@ class Client {
     ClientStatus Status;
 public:
     vector<Account*> accounts;
-    int ClientID;
+    int ClientID = 0;
     Client(string FirstName, string SurName) : FirstName(FirstName), SurName(SurName){};
     void AddAddress(string Address){ this->Address = Address; };
     void AddPassportInfo(string PassportInfo);

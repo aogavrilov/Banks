@@ -10,11 +10,11 @@
 
 class CreditAccount : public Account{
 public:
-    CreditAccount(int AccountId, int ClientId, int Percent, int Sum) :  Account(AccountId, ClientId,
+    CreditAccount(long long AccountId, int ClientId, int Percent, int Sum) :  Account(AccountId, ClientId,
             Percent, Sum){};
 
-    Transaction Withdraw(int Sum);
-    Transaction Transfer(int Sum, int ToAccount, string Comment);
+    Transaction* Withdraw(int Sum) override ;
+    Transaction* Transfer(int Sum, long long ToAccount, string Comment) override;
 
 };
 
