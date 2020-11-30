@@ -6,10 +6,11 @@
 #define BANKS_BANKSYSTEM_H
 
 #include <vector>
-#include "../Accounts/Account.h"
 #include "../Clients/ClientsSystem.h"
-int GetBankIDFromNumber(int number){return ((number % 1000000000000000) / 10000000000);}
-int GetClientIDFromNumber(int number){return (number % 10000000000);}
+#include "PercentPolitics.h"
+
+int static GetBankIDFromNumber(int number){return ((number % 1000000000000000) / 10000000000);}
+int static GetClientIDFromNumber(int number){return (number % 10000000000);}
 using namespace std;
 class BankSystem {
     vector<Client*> clients;
@@ -18,11 +19,15 @@ class BankSystem {
 public:
     int BankId;
     int Percent;
-    BankSystem(int BankId, string Name, int Percent) : BankId(BankId), Name(Name), Percent(Percent){};
+    PercentPolitics percentPolitics;
+    vector<Transaction*> TransactionsHistory;
+    BankSystem(int BankId, string Name, int Percent, PercentPolitics percentPolitics) : BankId(BankId), Name(Name),
+    Percent(Percent), percentPolitics(percentPolitics){};
     void PayDay();
     void PayMonth();
+    Client* AddClient(Client*);
 
     vector<Account*> accounts;
 };
-vector<BankSystem*> Banks;
+static vector<BankSystem*> Banks;
 #endif //BANKS_BANKSYSTEM_H

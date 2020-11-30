@@ -6,7 +6,6 @@
 #define BANKS_ACCOUNTBUILDER_H
 
 
-#include "ClientsSystem.h"
 #include "../Banks/BankSystem.h"
 
 class AccountBuilder {
@@ -14,6 +13,7 @@ class AccountBuilder {
     AccountType accountType;
     BankSystem* bank;
     int Sum;
+public:
     AccountBuilder(Client* client, AccountType accountType, BankSystem* bank, int Sum) : client(client), accountType(accountType), bank(bank), Sum(Sum){};
     Account* AccountBuild();
 };

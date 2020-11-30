@@ -3,15 +3,11 @@
 //
 
 #include "DepositAccount.h"
-#include "../main.cpp"
+#include "../Banks/BankSystem.h"
+
+
 void DepositAccount::GetPercent() {
-    float TrPercent;
-    if(this->InitialSum < 50000)
-        TrPercent = 3;
-    else if(this->InitialSum < 100000)
-        TrPercent = 3.5;
-    else
-        TrPercent = 4;
+    float TrPercent = Banks[GetBankIDFromNumber(this->AccountId)]->percentPolitics.GetPercent(Sum);
     Transaction transaction = Transaction(this->Sum * TrPercent / 100, -1, this->AccountId,
             "Percent by using card", Interest);
     transaction.Do();

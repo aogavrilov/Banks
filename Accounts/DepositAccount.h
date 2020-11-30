@@ -7,7 +7,7 @@
 
 
 #include "Account.h"
-#include <time.h>
+
 class DepositAccount : public Account{
     tm* EndDepositTime;
     int InitialSum;
@@ -19,12 +19,7 @@ public:
     Transaction Withdraw(int Sum);
     Transaction Transfer(int Sum, int ToAccount, string Comment);
 
-    /*
-     * time_t  now1 = time(0);
-    tm* lt1 = localtime(&now1);
-    lt1->tm_mday -=1;
 
-     */
 };
 
 

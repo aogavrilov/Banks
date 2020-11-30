@@ -8,3 +8,4 @@ Transaction Account::Deposit(int Sum) {
     transaction.Do();
     return transaction;
 }
+

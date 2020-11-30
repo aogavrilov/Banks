@@ -7,9 +7,10 @@ void Client::AddPassportInfo(string PassportInfo){
     this->PassportInfo = PassportInfo;
 };
 
-void Client::Verification() {
+Client* Client::Verification() {
     if((PassportInfo == "-") || (Address == "-"))
         Status = Unverified;
     else
         Status = Verified;
+    return this;
 }

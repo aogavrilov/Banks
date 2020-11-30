@@ -5,7 +5,7 @@
 #ifndef BANKS_CLIENTSSYSTEM_H
 #define BANKS_CLIENTSSYSTEM_H
 
-#include <string>
+
 #include "../Accounts/Account.h"
 #include <vector>
 using namespace std;
@@ -24,7 +24,7 @@ public:
     Client(string FirstName, string SurName) : FirstName(FirstName), SurName(SurName){};
     void AddAddress(string Address){ this->Address = Address; };
     void AddPassportInfo(string PassportInfo);
-    void Verification();
+    Client* Verification();
 };
 
 

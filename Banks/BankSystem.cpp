@@ -24,3 +24,7 @@ void BankSystem::PayMonth() {//InterestOnTheBalance
         }
     }
 }
+Client* BankSystem::AddClient(Client* client) {
+    clients.push_back(client);
+    return client;
+}
